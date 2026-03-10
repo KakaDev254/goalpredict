@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GoalPredict - Past Predictions Archive</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- Add this right after the opening body tag or before closing body tag -->
+    <div class="mobile-home-fab">
+      <a href="index.html" class="fab-btn">
+        <span class="fab-icon">🏠</span>
+        <span class="fab-text">Today's Predictions</span>
+      </a>
+    </div>
+    <!-- TOP NAVBAR -->
+    <nav class="navbar navbar-dark navbar-expand-lg topbar">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#sidebarMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand fw-bold" href="index.html">GoalPredict ⚽</a>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- SIDEBAR (same as index) -->
+        <div class="col-lg-2 sidebar collapse d-lg-block" id="sidebarMenu">
+          <h5 class="mt-4 text-center">Menu</h5>
+
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#acca">← Back to Today</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#acca">Daily Acca Archive</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#corners">Corner Kings Archive</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#smart">Smart Odds Archive</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#jackpot">Jackpot Hunter Archive</a>
+            </li>
+          </ul>
+
+          <div class="donate-box">
+            <h6>Support Us</h6>
+            <p>M-Pesa Till</p>
+            <strong>123456</strong>
+          </div>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="col-lg-8 main-content">
+          <h1 class="page-title mb-4">Past Predictions Archive</h1>
+
+          <!-- Global Date Navigation -->
+          <div class="archive-navigation mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Browse by Date</h5>
+                <div class="date-navigation-buttons">
+                  <button
+                    class="btn btn-outline-primary"
+                    onclick="navigateDate('prev')"
+                  >
+                    ← Previous Day
+                  </button>
+                  <span class="current-date-display" id="currentDisplayDate"
+                    >Loading...</span
+                  >
+                  <button
+                    class="btn btn-outline-primary"
+                    onclick="navigateDate('next')"
+                  >
+                    Next Day →
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Daily Acca Archive -->
+          <section id="acca">
+            <h2 class="section-title">
+              Daily Goal Acca Archive
+              <small class="text-muted" id="acca-date"></small>
+            </h2>
+
+            <div class="prediction-table">
+              <div class="table-header">
+                <span>Match</span>
+                <span>Time</span>
+                <span>Tip</span>
+                <span>Odd</span>
+                <span>Result</span>
+              </div>
+
+              <div id="acca-table" class="table-rows"></div>
+              <div class="total-odds">
+                Total Odds: <span id="acca-total">0.00</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Corner Kings Archive -->
+          <section id="corners">
+            <h2 class="section-title">
+              Corner Kings Archive
+              <small class="text-muted" id="corners-date"></small>
+            </h2>
+
+            <div class="prediction-table">
+              <div class="table-header">
+                <span>Match</span>
+                <span>Time</span>
+                <span>Tip</span>
+                <span>Odd</span>
+                <span>Result</span>
+              </div>
+
+              <div id="corners-container" class="table-rows"></div>
+              <div class="total-odds">
+                Total Odds: <span id="corners-total">0.00</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Smart Odds Archive -->
+          <section id="smart">
+            <h2 class="section-title">
+              Smart Odds Archive
+              <small class="text-muted" id="smart-date"></small>
+            </h2>
+
+            <div class="prediction-table">
+              <div class="table-header">
+                <span>Match</span>
+                <span>Time</span>
+                <span>Tip</span>
+                <span>Odds</span>
+                <span>Result</span>
+              </div>
+
+              <div id="smart-container" class="table-rows"></div>
+              <div class="total-odds">
+                Total Odds: <span id="smart-total">0.00</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Jackpot Hunter Archive -->
+          <section id="jackpot">
+            <h2 class="section-title">
+              Jackpot Hunter Archive
+              <small class="text-muted" id="jackpot-date"></small>
+            </h2>
+
+            <div class="prediction-table">
+              <div class="table-header">
+                <span>Match</span>
+                <span>Time</span>
+                <span>Tip</span>
+                <span>Result</span>
+              </div>
+
+              <div id="jackpot-container" class="table-rows"></div>
+            </div>
+          </section>
+        </div>
+
+        <!-- ADS SIDEBAR (same as index) -->
+        <div class="col-lg-2 ads">
+          <div class="ad-box">
+            <h6>Sponsored</h6>
+            <p>Betika Bonus</p>
+            <button class="ad-btn">Join</button>
+          </div>
+          <div class="ad-box">
+            <h6>Sponsored</h6>
+            <p>SportPesa Jackpot</p>
+            <button class="ad-btn">Play</button>
+          </div>
+          <div class="ad-box">
+            <h6>Sponsored</h6>
+            <p>Odibets Free Bet</p>
+            <button class="ad-btn">Claim</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="telegram-box">
+      <h4>Free Daily Predictions</h4>
+      <p>Join our Telegram for instant tips</p>
+      <a href="https://t.me/yourchannel" class="telegram-btn">Join Telegram</a>
+    </div>
+
+    <footer class="footer">
+      <p>© 2026 GoalPredict</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Data Files -->
+    <script src="data/acca-data.js"></script>
+    <script src="data/corners-data.js"></script>
+    <script src="data/smartOdds-data.js"></script>
+    <script src="data/jackpot-data.js"></script>
+
+    <!-- Archive Controller (New file) -->
+    <script src="js/archive-controller.js"></script>
+
+    <!-- Individual Section Scripts (they will detect they're on archive page) -->
+    <script src="js/acca.js"></script>
+    <script src="js/corners.js"></script>
+    <script src="js/smartOdds.js"></script>
+    <script src="js/jackpot.js"></script>
+  </body>
+</html>

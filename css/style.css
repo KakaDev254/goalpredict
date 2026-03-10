@@ -1,0 +1,483 @@
+/* ================= ROOT VARIABLES ================= */
+
+:root {
+  --primary: #3b9797;
+  --secondary: #16476a;
+  --dark: #132440;
+  --accent: #bf092f;
+
+  --white: #ffffff;
+  --light-gray: #f5f5f5;
+
+  --radius: 10px;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ================= GLOBAL ================= */
+
+body {
+  background: var(--dark);
+  color: var(--white);
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* ================= TOP NAVBAR ================= */
+
+.topbar {
+  background: var(--secondary);
+  box-shadow: var(--shadow);
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+  background: var(--secondary);
+  min-height: 100vh;
+  padding: 25px 20px;
+}
+
+.sidebar .nav-link {
+  color: var(--white);
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  transition: 0.3s;
+}
+
+.sidebar .nav-link:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* ================= MAIN CONTENT ================= */
+
+.main-content {
+  padding: 35px;
+}
+
+/* ================= SECTION TITLES ================= */
+
+.section-title {
+  margin-bottom: 25px;
+  font-weight: 700;
+  border-left: 5px solid var(--accent);
+  padding-left: 10px;
+}
+
+/* ================= PREDICTION CARDS ================= */
+
+.card-prediction {
+  background: var(--white);
+  color: #000;
+  padding: 20px;
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+  transition: 0.3s;
+}
+
+.card-prediction:hover {
+  transform: translateY(-4px);
+}
+
+/* ================= TIP HIGHLIGHT ================= */
+
+.tip {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ================= ADS SIDEBAR ================= */
+
+.ads {
+  padding: 20px;
+  position: sticky;
+  top: 20px;
+}
+
+.ad-box {
+  background: var(--white);
+  color: #000;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.ad-btn {
+  background: var(--accent);
+  border: none;
+  color: var(--white);
+  padding: 8px 20px;
+  border-radius: var(--radius);
+  transition: 0.3s;
+}
+
+.ad-btn:hover {
+  background: #9d0726;
+}
+
+/* ================= DONATION ================= */
+
+.donate-box {
+  background: var(--primary);
+  padding: 15px;
+  margin-top: 40px;
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+/* ================= TELEGRAM ================= */
+
+.telegram-box {
+  background: var(--primary);
+  padding: 30px;
+  text-align: center;
+  border-radius: var(--radius);
+  margin-top: 40px;
+}
+
+.telegram-btn {
+  background: var(--accent);
+  color: var(--white);
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: var(--radius);
+  display: inline-block;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.telegram-btn:hover {
+  background: #9d0726;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+  background: var(--secondary);
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 992px) {
+  .sidebar {
+    min-height: auto;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .ads {
+    position: relative;
+  }
+}
+/* ===============================
+   MATCH TABLE
+================================ */
+
+.prediction-table {
+  background: white;
+  color: black;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+/* ===============================
+   TABLE HEADER
+================================ */
+
+.table-header {
+  background: var(--secondary);
+  color: white;
+  font-weight: bold;
+}
+
+/* Shared grid layout */
+
+.table-header,
+.table-row {
+  display: grid;
+  grid-template-columns: 3fr 1fr 2fr 1fr 1fr;
+  align-items: center;
+  padding: 10px;
+}
+
+/* ===============================
+   TABLE ROW
+================================ */
+
+.table-row {
+  border-bottom: 1px solid #eee;
+}
+
+.table-row:nth-child(even) {
+  background: #f6f6f6;
+}
+
+.table-row:hover {
+  background: #eef6f6;
+}
+
+/* ===============================
+   RESULT ICONS
+================================ */
+
+.correct,
+.result-win {
+  color: #28a745;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.failed,
+.result-lose {
+  color: #bf092f;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.result-pending {
+  color: gray;
+}
+
+/* ===============================
+   TIP STYLE
+================================ */
+
+.tip {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* ===============================
+   TOTAL ODDS
+================================ */
+
+.total-odds {
+  padding: 12px;
+  text-align: right;
+  font-weight: bold;
+  font-size: 16px;
+  background: #f4f4f4;
+}
+
+/* ===============================
+   VIEW PREVIOUS BUTTON
+================================ */
+
+.view-more {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.view-btn {
+  background: #bf092f;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.view-btn:hover {
+  background: #8e0623;
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+  .table-header,
+  .table-row {
+    grid-template-columns: 2fr 1fr 1.5fr 1fr 0.8fr;
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+/* Archive Page Specific Styles */
+.archive-navigation .card {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.date-navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.current-date-display {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #007bff;
+  padding: 5px 15px;
+  background-color: #f8f9fa;
+  border-radius: 20px;
+}
+
+.date-picker-container {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #dee2e6;
+}
+
+.date-picker-container select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+}
+
+.page-title {
+  color: #343a40;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+.section-title small {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-left: 10px;
+}
+
+/* Highlight active section when coming from hash link */
+section:target {
+  animation: highlight 2s ease;
+}
+
+@keyframes highlight {
+  0% {
+    background-color: rgba(0, 123, 255, 0.1);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .date-navigation-buttons {
+    flex-direction: column;
+  }
+
+  .current-date-display {
+    order: -1;
+    margin-bottom: 10px;
+  }
+}
+
+/* Option 3: Floating Action Button (FAB) */
+.mobile-home-fab {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0 15px;
+  pointer-events: none;
+}
+
+.fab-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(12, 12, 49);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 20px rgba(26, 38, 87, 0.5);
+  border: 2px solid white;
+  pointer-events: auto;
+  transition: all 0.3s ease;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.fab-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(44, 56, 112, 0.7);
+  color: white;
+}
+
+.fab-icon {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+/* Mobile responsive breakpoints */
+@media (max-width: 768px) {
+  /* Show mobile home container */
+  .mobile-home-container {
+    display: block;
+  }
+
+  /* OR show mobile nav home */
+  .mobile-nav-home {
+    display: flex;
+  }
+
+  /* OR show FAB (choose one option) */
+  .mobile-home-fab {
+    display: block;
+  }
+
+  /* Adjust main content to make room for FAB */
+  .main-content {
+    padding-bottom: 90px;
+  }
+
+  /* Option 2 specific adjustments */
+  .navbar .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    margin-right: 0;
+    font-size: 1.1rem;
+  }
+
+  /* Hide desktop-only elements */
+  .desktop-only {
+    display: none;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .mobile-nav-home .home-text {
+    display: none; /* Hide text, show only icon on very small screens */
+  }
+
+  .mobile-nav-home {
+    padding: 8px 12px;
+  }
+
+  .mobile-nav-home .home-icon {
+    margin-right: 0;
+  }
+
+  .fab-btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+    max-width: 250px;
+  }
+}
