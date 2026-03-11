@@ -1,0 +1,3 @@
+# Redirect /past-predictions to /past-predictions.html
+/past-predictions  /past-predictions.html  200
+/past-predictions*  /past-predictions.html  200
