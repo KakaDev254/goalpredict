@@ -1,5 +1,46 @@
 const accaPredictions = [
   {
+    date: "11 Mar 2026",
+    matches: [
+      {
+        match: "Bayer Leverkusen vs Arsenal",
+        time: "20:45",
+        tip: "2",
+        odd: 1.53,
+        result: "pending",
+      },
+      {
+        match: "Paris Saint-Germain vs Chelsea",
+        time: "23:00",
+        tip: "Over 2.5 Goals",
+        odd: 1.595,
+        result: "pending",
+      },
+      {
+        match: "Real Madrid vs Manchester City",
+        time: "23:00",
+        tip: "BTTS Yes",
+        odd: 1.56,
+        result: "pending",
+      },
+      {
+        match: "Middlesbrough vs Charlton",
+        time: "22:45",
+        tip: "1",
+        odd: 1.35,
+        result: "pending",
+      },
+      {
+        match: "Coventry vs Preston",
+        time: "23:00",
+        tip: "Over 8.5 Corners",
+        odd: 1.342,
+        result: "pending",
+      },
+    ],
+  },
+
+  {
     date: "10 Mar 2026",
     matches: [
       {
@@ -7,21 +48,21 @@ const accaPredictions = [
         time: "20:45",
         tip: "Over 10.5 Corners",
         odd: 2.4,
-        result: "pending",
+        result: "win",
       },
       {
         match: "Atletico Madrid vs Tottenham",
         time: "23:00",
         tip: "Team 1:Over 2.5",
         odd: 3.32,
-        result: "pending",
+        result: "win",
       },
       {
         match: "Newcastle United vs Barcelona",
         time: "23:00",
         tip: "Barcelona Win",
         odd: 2.435,
-        result: "pending",
+        result: "lose",
       },
 
       {
@@ -29,14 +70,14 @@ const accaPredictions = [
         time: "22:45",
         tip: "Over 9.5 Corners",
         odd: 1.646,
-        result: "pending",
+        result: "lose",
       },
       {
         match: "Linfield vs Portadown",
         time: "22:45",
         tip: "Over 9.5 Corners",
         odd: 1.548,
-        result: "pending",
+        result: "win",
       },
     ],
   },

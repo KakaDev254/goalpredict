@@ -1,5 +1,39 @@
 const cornersPredictions = [
   {
+    date: "11 Mar 2026",
+    matches: [
+      {
+        match: "Bodo-Glimt vs Sporting CP",
+        time: "23:00",
+        tip: "Over 9.5 Corners",
+        odd: 1.71,
+        result: "pending",
+      },
+      {
+        match: "Coventry vs Preston",
+        time: "23:00",
+        tip: "Over 9.5 Corners",
+        odd: 1.63,
+        result: "pending",
+      },
+
+      {
+        match: "Paris Saint-Germain vs Chelsea",
+        time: "23:00",
+        tip: "Over 8.5 Corners",
+        odd: 1.58,
+        result: "pending",
+      },
+      {
+        match: "ENPPI vs Zamalek",
+        time: "10:30",
+        tip: "Over 8.5 Corners",
+        odd: 1.84,
+        result: "pending",
+      },
+    ],
+  },
+  {
     date: "10 Mar 2026",
     matches: [
       {
@@ -7,21 +41,21 @@ const cornersPredictions = [
         time: "20:45",
         tip: "Over 10.5 Corners",
         odd: 2.4,
-        result: "pending",
+        result: "win",
       },
       {
         match: "Crusaders vs Cliftonville",
         time: "22:45",
         tip: "Over 9.5 Corners",
         odd: 1.646,
-        result: "pending",
+        result: "lose",
       },
       {
         match: "Linfield vs Portadown",
         time: "22:45",
         tip: "Over 9.5 Corners",
         odd: 1.548,
-        result: "pending",
+        result: "win",
       },
     ],
   },
