@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function initializeJackpot() {
   // Get current page path
   const path = window.location.pathname;
-  const isPastPredictionsPage = path.includes("past-predictions.html");
+  const isPastPredictionsPage = path.includes("past-predictions");
 
   if (isPastPredictionsPage) {
     renderPastJackpot();
@@ -18,21 +18,30 @@ function initializeJackpot() {
 function renderTodayJackpot() {
   const container = document.getElementById("jackpot-container");
 
-  if (!container) return;
+  if (!container) {
+    console.warn("Jackpot container not found");
+    return;
+  }
 
   container.innerHTML = "";
 
-  // Get today's date in the format "10 Mar 2026"
+  // Get today's date in the format "11 Mar 2026"
   const today = new Date().toLocaleDateString("en-GB", {
     day: "2-digit",
     month: "short",
     year: "numeric",
   });
 
+  console.log("Today's date for jackpot:", today);
+
   // Find today's predictions
   const todayPredictions = jackpotPredictions.find((p) => p.date === today);
 
-  if (todayPredictions) {
+  if (
+    todayPredictions &&
+    todayPredictions.matches &&
+    todayPredictions.matches.length > 0
+  ) {
     todayPredictions.matches.forEach((game) => {
       // Create result icon based on result status
       let resultIcon = "-";
@@ -66,31 +75,37 @@ function renderTodayJackpot() {
 function renderPastJackpot() {
   const container = document.querySelector("#jackpot .table-rows");
 
-  if (!container) return;
+  if (!container) {
+    console.warn("Jackpot container not found");
+    return;
+  }
 
   container.innerHTML = "";
 
-  // Get date from URL or use most recent past date
+  // Get date from URL
   const urlParams = new URLSearchParams(window.location.search);
   const selectedDate = urlParams.get("date");
 
-  // Find the predictions for selected date or most recent
-  let datePredictions;
-  let displayDate;
+  console.log("Selected date for jackpot:", selectedDate);
+
+  // Find the predictions for selected date
+  let datePredictions = null;
 
   if (selectedDate) {
     datePredictions = jackpotPredictions.find((p) => p.date === selectedDate);
-    displayDate = selectedDate;
-  } else {
-    // Use the most recent date (first in array)
-    datePredictions = jackpotPredictions[0];
-    displayDate = datePredictions ? datePredictions.date : null;
   }
 
-  // Add date selector
-  addJackpotDateSelector(displayDate);
+  // If no date in URL or date not found, use most recent
+  if (!datePredictions && jackpotPredictions.length > 0) {
+    datePredictions = jackpotPredictions[0];
+    console.log("Using most recent jackpot date:", datePredictions.date);
+  }
 
-  if (datePredictions && datePredictions.matches.length > 0) {
+  if (
+    datePredictions &&
+    datePredictions.matches &&
+    datePredictions.matches.length > 0
+  ) {
     datePredictions.matches.forEach((game) => {
       // Create result display based on result status
       let resultDisplay = "-";
@@ -126,62 +141,4 @@ function renderPastJackpot() {
   }
 }
 
-function addJackpotDateSelector(selectedDate) {
-  const section = document.getElementById("jackpot");
-  if (!section) return;
-
-  // Check if selector already exists
-  let selectorContainer = document.getElementById("jackpot-date-selector");
-  if (!selectorContainer) {
-    selectorContainer = document.createElement("div");
-    selectorContainer.id = "jackpot-date-selector";
-    selectorContainer.className = "date-selector mb-3";
-
-    // Insert at the beginning of the section
-    const title = section.querySelector("h2");
-    title.insertAdjacentElement("afterend", selectorContainer);
-  }
-
-  // Create selector HTML
-  let selectorHTML = `
-    <div class="d-flex align-items-center gap-2">
-      <label for="jackpot-date-picker" class="fw-bold">Select Date:</label>
-      <select id="jackpot-date-picker" class="form-select form-select-sm" style="width: auto;">
-  `;
-
-  // Add all available dates from the data
-  jackpotPredictions.forEach((prediction) => {
-    const today = new Date().toLocaleDateString("en-GB", {
-      day: "2-digit",
-      month: "short",
-      year: "numeric",
-    });
-
-    const isToday = prediction.date === today;
-    const displayText = isToday
-      ? `${prediction.date} (Today)`
-      : prediction.date;
-    const selected = prediction.date === selectedDate ? "selected" : "";
-
-    selectorHTML += `<option value="${prediction.date}" ${selected}>${displayText}</option>`;
-  });
-
-  selectorHTML += `
-      </select>
-    </div>
-  `;
-
-  selectorContainer.innerHTML = selectorHTML;
-
-  // Add event listener
-  const datePicker = document.getElementById("jackpot-date-picker");
-  if (datePicker) {
-    datePicker.addEventListener("change", function (e) {
-      const newDate = e.target.value;
-      // Update URL and reload data
-      const url = new URL(window.location.href);
-      url.searchParams.set("date", newDate);
-      window.location.href = url.toString();
-    });
-  }
-}
+// REMOVED: addJackpotDateSelector function - using global date selector instead

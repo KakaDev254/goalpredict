@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function initializeAcca() {
   // Get current page path
   const path = window.location.pathname;
-  const isPastPredictionsPage = path.includes("past-predictions.html");
+  const isPastPredictionsPage = path.includes("past-predictions");
 
   if (isPastPredictionsPage) {
     renderPastAcca();
@@ -23,7 +23,7 @@ function renderTodayAcca() {
 
   container.innerHTML = "";
 
-  // Get today's date in the format "10 Mar 2026"
+  // Get today's date in the format "11 Mar 2026"
   const today = new Date().toLocaleDateString("en-GB", {
     day: "2-digit",
     month: "short",
@@ -82,27 +82,27 @@ function renderPastAcca() {
 
   container.innerHTML = "";
 
-  // Get date from URL or use most recent past date
+  // Get date from URL
   const urlParams = new URLSearchParams(window.location.search);
   const selectedDate = urlParams.get("date");
 
-  // Find the predictions for selected date or most recent
-  let datePredictions;
-  let displayDate;
+  // Find the predictions for selected date
+  let datePredictions = null;
 
   if (selectedDate) {
     datePredictions = accaPredictions.find((p) => p.date === selectedDate);
-    displayDate = selectedDate;
-  } else {
-    // Use the most recent date (first in array)
-    datePredictions = accaPredictions[0];
-    displayDate = datePredictions ? datePredictions.date : null;
   }
 
-  // Add date selector
-  addAccaDateSelector(displayDate);
+  // If no date in URL or date not found, use most recent
+  if (!datePredictions && accaPredictions.length > 0) {
+    datePredictions = accaPredictions[0];
+  }
 
-  if (datePredictions && datePredictions.matches.length > 0) {
+  if (
+    datePredictions &&
+    datePredictions.matches &&
+    datePredictions.matches.length > 0
+  ) {
     let totalOdds = 1;
 
     datePredictions.matches.forEach((game) => {
@@ -148,67 +148,9 @@ function renderPastAcca() {
   }
 }
 
-function addAccaDateSelector(selectedDate) {
-  const section = document.getElementById("acca");
-  if (!section) return;
+// REMOVED: addAccaDateSelector function - we're using global date selector instead
 
-  // Check if selector already exists
-  let selectorContainer = document.getElementById("acca-date-selector");
-  if (!selectorContainer) {
-    selectorContainer = document.createElement("div");
-    selectorContainer.id = "acca-date-selector";
-    selectorContainer.className = "date-selector mb-3";
-
-    // Insert at the beginning of the section
-    const title = section.querySelector("h2");
-    title.insertAdjacentElement("afterend", selectorContainer);
-  }
-
-  // Create selector HTML
-  let selectorHTML = `
-    <div class="d-flex align-items-center gap-2">
-      <label for="acca-date-picker" class="fw-bold">Select Date:</label>
-      <select id="acca-date-picker" class="form-select form-select-sm" style="width: auto;">
-  `;
-
-  // Add all available dates from the data
-  accaPredictions.forEach((prediction) => {
-    const today = new Date().toLocaleDateString("en-GB", {
-      day: "2-digit",
-      month: "short",
-      year: "numeric",
-    });
-
-    const isToday = prediction.date === today;
-    const displayText = isToday
-      ? `${prediction.date} (Today)`
-      : prediction.date;
-    const selected = prediction.date === selectedDate ? "selected" : "";
-
-    selectorHTML += `<option value="${prediction.date}" ${selected}>${displayText}</option>`;
-  });
-
-  selectorHTML += `
-      </select>
-    </div>
-  `;
-
-  selectorContainer.innerHTML = selectorHTML;
-
-  // Add event listener
-  const datePicker = document.getElementById("acca-date-picker");
-  if (datePicker) {
-    datePicker.addEventListener("change", function (e) {
-      const newDate = e.target.value;
-      // Update URL and reload data
-      const url = new URL(window.location.href);
-      url.searchParams.set("date", newDate);
-      window.location.href = url.toString();
-    });
-  }
-}
-
-// Function to calculate total odds for acca (can be used if needed separately)
+// Function to calculate total odds for acca
 function calculateAccaTotalOdds(matches) {
   if (!matches || matches.length === 0) return "0.00";
   return matches.reduce((total, match) => total * match.odd, 1).toFixed(2);

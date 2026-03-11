@@ -2,17 +2,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("Archive controller initializing...");
 
-  // Check if we're on past-predictions page - IMPROVED CHECK
-  const path = window.location.pathname;
-  console.log("Current path:", path);
-
-  // More flexible check for archive page
-  const isArchivePage =
-    path.includes("past-predictions") ||
-    path.includes("past-predictions.html") ||
-    document.getElementById("currentDisplayDate") !== null;
-
-  console.log("Is archive page?", isArchivePage);
+  // Force initialization on past-predictions page
+  const isArchivePage = window.location.pathname.includes("past-predictions");
 
   if (!isArchivePage) {
     console.log("Not on archive page, exiting");
@@ -24,11 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function initializeArchiveController() {
-  console.log("Initializing archive controller...");
-
-  // Get all available dates across all sections
+  // Get all available dates
   const allDates = getAllAvailableDates();
-  console.log("All available dates:", allDates);
+  console.log("All dates found:", allDates);
 
   if (!allDates || allDates.length === 0) {
     console.error("No dates found in any prediction data!");
@@ -44,7 +33,7 @@ function initializeArchiveController() {
     return;
   }
 
-  // Get current date from URL or use most recent
+  // Get date from URL or use most recent
   const urlParams = new URLSearchParams(window.location.search);
   let currentDate = urlParams.get("date");
   console.log("Date from URL:", currentDate);
@@ -69,84 +58,44 @@ function initializeArchiveController() {
     updateURLParameter("date", currentDate);
   }
 
-  // Setup navigation buttons with proper parameters
-  setupDateNavigation(allDates, currentDate);
+  // Setup navigation buttons
+  setupNavigationButtons(allDates, currentDate);
 }
 
 function getAllAvailableDates() {
   const dates = new Set();
   console.log("Collecting dates from all prediction sources...");
 
-  // Collect dates from all prediction sources with error checking
-  if (
-    typeof accaPredictions !== "undefined" &&
-    accaPredictions &&
-    accaPredictions.length > 0
-  ) {
-    console.log("✅ accaPredictions found:", accaPredictions.length, "entries");
-    accaPredictions.forEach((p) => {
-      if (p && p.date) dates.add(p.date);
-    });
-  } else {
-    console.warn("⚠️ accaPredictions is not defined or is empty");
+  // Helper function to safely add dates from a data source
+  function addDatesFromSource(dataSource, sourceName) {
+    if (
+      typeof dataSource !== "undefined" &&
+      dataSource &&
+      dataSource.length > 0
+    ) {
+      console.log(`✅ ${sourceName} found:`, dataSource.length, "entries");
+      dataSource.forEach((item) => {
+        if (item && item.date) {
+          dates.add(item.date);
+          console.log(`   Added date: ${item.date} from ${sourceName}`);
+        }
+      });
+    } else {
+      console.log(`❌ ${sourceName} not found or empty`);
+    }
   }
 
-  if (
-    typeof cornersPredictions !== "undefined" &&
-    cornersPredictions &&
-    cornersPredictions.length > 0
-  ) {
-    console.log(
-      "✅ cornersPredictions found:",
-      cornersPredictions.length,
-      "entries",
-    );
-    cornersPredictions.forEach((p) => {
-      if (p && p.date) dates.add(p.date);
-    });
-  } else {
-    console.warn("⚠️ cornersPredictions is not defined or is empty");
-  }
+  // Add dates from all sources
+  addDatesFromSource(accaPredictions, "accaPredictions");
+  addDatesFromSource(cornersPredictions, "cornersPredictions");
+  addDatesFromSource(smartOddsPredictions, "smartOddsPredictions");
+  addDatesFromSource(jackpotPredictions, "jackpotPredictions");
 
-  if (
-    typeof smartOddsPredictions !== "undefined" &&
-    smartOddsPredictions &&
-    smartOddsPredictions.length > 0
-  ) {
-    console.log(
-      "✅ smartOddsPredictions found:",
-      smartOddsPredictions.length,
-      "entries",
-    );
-    smartOddsPredictions.forEach((p) => {
-      if (p && p.date) dates.add(p.date);
-    });
-  } else {
-    console.warn("⚠️ smartOddsPredictions is not defined or is empty");
-  }
-
-  if (
-    typeof jackpotPredictions !== "undefined" &&
-    jackpotPredictions &&
-    jackpotPredictions.length > 0
-  ) {
-    console.log(
-      "✅ jackpotPredictions found:",
-      jackpotPredictions.length,
-      "entries",
-    );
-    jackpotPredictions.forEach((p) => {
-      if (p && p.date) dates.add(p.date);
-    });
-  } else {
-    console.warn("⚠️ jackpotPredictions is not defined or is empty");
-  }
-
-  // Convert to array and sort (most recent first)
+  // Convert to array
   const datesArray = Array.from(dates);
   console.log("Total unique dates found:", datesArray.length);
 
-  // Sort dates (assuming format "DD MMM YYYY" like "11 Mar 2026")
+  // Sort dates (most recent first)
   return datesArray.sort((a, b) => {
     try {
       // Convert "DD MMM YYYY" to Date object for comparison
@@ -161,8 +110,8 @@ function getAllAvailableDates() {
 }
 
 function disableNavigationButtons() {
-  const prevBtn = document.querySelector('button[onclick*="prev"]');
-  const nextBtn = document.querySelector('button[onclick*="next"]');
+  const prevBtn = document.getElementById("prevDayBtn");
+  const nextBtn = document.getElementById("nextDayBtn");
 
   if (prevBtn) {
     prevBtn.disabled = true;
@@ -174,50 +123,58 @@ function disableNavigationButtons() {
   }
 }
 
-function setupDateNavigation(allDates, currentDate) {
-  console.log("Setting up date navigation...");
-  console.log("allDates:", allDates);
-  console.log("currentDate:", currentDate);
+function setupNavigationButtons(allDates, currentDate) {
+  console.log("Setting up navigation buttons...");
 
-  // Get buttons - IMPROVED SELECTOR
-  const prevBtn = document.querySelector('button[onclick*="prev"]');
-  const nextBtn = document.querySelector('button[onclick*="next"]');
+  const prevBtn = document.getElementById("prevDayBtn");
+  const nextBtn = document.getElementById("nextDayBtn");
 
   console.log("Prev button found:", prevBtn !== null);
   console.log("Next button found:", nextBtn !== null);
 
-  // Remove existing onclick attributes and add new ones
-  if (prevBtn) {
-    prevBtn.onclick = null; // Remove old handler
-    prevBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      navigateDate("prev", allDates, currentDate);
-    });
+  if (!prevBtn || !nextBtn) {
+    console.error("Navigation buttons not found in DOM!");
+    return;
   }
 
-  if (nextBtn) {
-    nextBtn.onclick = null; // Remove old handler
-    nextBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      navigateDate("next", allDates, currentDate);
-    });
-  }
+  // Remove all existing event listeners by cloning and replacing
+  const prevBtnClone = prevBtn.cloneNode(true);
+  const nextBtnClone = nextBtn.cloneNode(true);
+
+  prevBtn.parentNode.replaceChild(prevBtnClone, prevBtn);
+  nextBtn.parentNode.replaceChild(nextBtnClone, nextBtn);
+
+  // Get fresh references
+  const newPrevBtn = document.getElementById("prevDayBtn");
+  const newNextBtn = document.getElementById("nextDayBtn");
+
+  // Add new event listeners
+  newPrevBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    navigateDate("prev", allDates, currentDate);
+  });
+
+  newNextBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    navigateDate("next", allDates, currentDate);
+  });
+
+  // Update button states
+  updateButtonStates(allDates, currentDate);
 }
 
 function navigateDate(direction, allDates, currentDate) {
   console.log(`Navigating ${direction} from ${currentDate}`);
-  console.log("allDates:", allDates);
-  console.log("currentDate:", currentDate);
 
   // Safety checks
   if (!allDates || !Array.isArray(allDates) || allDates.length === 0) {
-    console.error("Cannot navigate: allDates is empty or invalid", allDates);
+    console.error("Cannot navigate: allDates is empty or invalid");
     alert("No dates available for navigation");
     return;
   }
 
   if (!currentDate) {
-    console.error("Cannot navigate: currentDate is", currentDate);
+    console.error("Cannot navigate: currentDate is undefined");
     // Try to use the first date as fallback
     if (allDates.length > 0) {
       currentDate = allDates[0];
@@ -294,14 +251,39 @@ function updateURLParameter(key, value) {
   window.history.replaceState({}, "", url);
 }
 
+function updateButtonStates(allDates, currentDate) {
+  const prevBtn = document.getElementById("prevDayBtn");
+  const nextBtn = document.getElementById("nextDayBtn");
+
+  if (!prevBtn || !nextBtn) return;
+
+  const currentIndex = allDates.indexOf(currentDate);
+
+  // Disable prev button if on oldest date
+  if (currentIndex >= allDates.length - 1) {
+    prevBtn.disabled = true;
+    prevBtn.classList.add("disabled");
+  } else {
+    prevBtn.disabled = false;
+    prevBtn.classList.remove("disabled");
+  }
+
+  // Disable next button if on newest date
+  if (currentIndex <= 0) {
+    nextBtn.disabled = true;
+    nextBtn.classList.add("disabled");
+  } else {
+    nextBtn.disabled = false;
+    nextBtn.classList.remove("disabled");
+  }
+}
+
 // Also check on window load as backup
 window.addEventListener("load", function () {
   console.log("Window fully loaded");
 
   // If we're on archive page but controller didn't run, run it now
-  const isArchivePage =
-    window.location.pathname.includes("past-predictions") ||
-    document.getElementById("currentDisplayDate") !== null;
+  const isArchivePage = window.location.pathname.includes("past-predictions");
 
   if (isArchivePage && typeof window.archiveInitialized === "undefined") {
     console.log("Late initialization on window load");
