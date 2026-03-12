@@ -7,14 +7,14 @@ const cornersPredictions = [
         time: "23:00",
         tip: "Over 9.5 Corners",
         odd: 1.71,
-        result: "pending",
+        result: "lose",
       },
       {
         match: "Coventry vs Preston",
         time: "23:00",
         tip: "Over 9.5 Corners",
         odd: 1.63,
-        result: "pending",
+        result: "lose",
       },
 
       {
@@ -22,14 +22,14 @@ const cornersPredictions = [
         time: "23:00",
         tip: "Over 8.5 Corners",
         odd: 1.58,
-        result: "pending",
+        result: "lose",
       },
       {
         match: "ENPPI vs Zamalek",
         time: "10:30",
         tip: "Over 8.5 Corners",
         odd: 1.84,
-        result: "pending",
+        result: "win",
       },
     ],
   },
