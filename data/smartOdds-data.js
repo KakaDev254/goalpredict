@@ -1,5 +1,38 @@
 const smartOddsPredictions = [
   {
+    date: "12 Mar 2026",
+    matches: [
+      {
+        match: "Fiorentina vs Rakow Czestochowa",
+        time: "23:00",
+        tip: "1X",
+        odd: 1.21,
+        result: "pending",
+      },
+      {
+        match: "Lille OSC vs Aston Villa",
+        time: "20:45",
+        tip: "Over 8.5 Corners",
+        odd: 1.54,
+        result: "pending",
+      },
+      {
+        match: "Bologna vs Rома",
+        time: "20:45",
+        tip: "Over 1.5 Goals",
+        odd: 1.4,
+        result: "pending",
+      },
+      {
+        match: "Baniyas vs Al-Wahda Abu Dhabi",
+        time: "20:45",
+        tip: "Double Chance X2",
+        odd: 1.24,
+        result: "pending",
+      },
+    ],
+  },
+  {
     date: "11 Mar 2026",
     matches: [
       {
