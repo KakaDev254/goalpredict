@@ -1,5 +1,52 @@
 const accaPredictions = [
   {
+    date: "12 Mar 2026",
+    matches: [
+      {
+        match: "Bologna vs Rома",
+        time: "20:45",
+        tip: "Over 1.5 Goals",
+        odd: 1.4,
+        result: "pending",
+      },
+      {
+        match: "Lille OSC vs Aston Villa",
+        time: "20:45",
+        tip: "Over 8.5 Corners",
+        odd: 1.54,
+        result: "pending",
+      },
+      {
+        match: "Celta vs Lyon",
+        time: "23:00",
+        tip: "Double Chance 2X",
+        odd: 1.76,
+        result: "pending",
+      },
+      {
+        match: "Rijeka vs Strasbourg",
+        time: "20:45",
+        tip: "Over 7.5 Corners",
+        odd: 1.37,
+        result: "pending",
+      },
+      {
+        match: "Fiorentina vs Rakow Czestochowa",
+        time: "23:00",
+        tip: "Fiorentina Win",
+        odd: 1.912,
+        result: "pending",
+      },
+      {
+        match: "Baniyas vs Al-Wahda",
+        time: "20:45",
+        tip: "Double Chance X2",
+        odd: 1.24,
+        result: "pending",
+      },
+    ],
+  },
+  {
     date: "11 Mar 2026",
     matches: [
       {

@@ -14,7 +14,7 @@ const smartOddsPredictions = [
         time: "23:00",
         tip: "Over 2.5 Goals",
         odd: 1.595,
-        result: "lose",
+        result: "win",
       },
       {
         match: "Real Madrid vs Manchester City",
