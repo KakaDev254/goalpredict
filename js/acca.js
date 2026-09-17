@@ -19,11 +19,12 @@ function renderTodayAcca() {
   const container = document.getElementById("acca-table");
   const totalOddsElement = document.getElementById("acca-total");
 
+  // If the container doesn't exist on this page, stop.
   if (!container) return;
 
   container.innerHTML = "";
 
-  // Get today's date in the format "11 Mar 2026"
+  // Get today's date in the format "17 Sep 2026"
   const today = new Date().toLocaleDateString("en-GB", {
     day: "2-digit",
     month: "short",
@@ -32,10 +33,15 @@ function renderTodayAcca() {
 
   let totalOdds = 1;
 
-  // Find today's predictions
-  const todayPredictions = accaPredictions.find((p) => p.date === today);
+  // 1. Try to find exactly today's predictions
+  let todayPredictions = accaPredictions.find((p) => p.date === today);
 
-  if (todayPredictions) {
+  // 2. Fallback: If no exact match for today, show the first upcoming match (e.g., 17 Sep 2026)
+  if (!todayPredictions && accaPredictions.length > 0) {
+    todayPredictions = accaPredictions[0];
+  }
+
+  if (todayPredictions && todayPredictions.matches.length > 0) {
     todayPredictions.matches.forEach((game) => {
       // Calculate total odds
       totalOdds *= game.odd;
@@ -63,14 +69,18 @@ function renderTodayAcca() {
     });
 
     // Update total odds
-    totalOddsElement.textContent = totalOdds.toFixed(2);
+    if (totalOddsElement) {
+      totalOddsElement.textContent = totalOdds.toFixed(2);
+    }
   } else {
     container.innerHTML = `
       <div class="no-predictions">
         No predictions available today.
       </div>
     `;
-    totalOddsElement.textContent = "0.00";
+    if (totalOddsElement) {
+      totalOddsElement.textContent = "0.00";
+    }
   }
 }
 
@@ -86,18 +96,30 @@ function renderPastAcca() {
   const urlParams = new URLSearchParams(window.location.search);
   const selectedDate = urlParams.get("date");
 
-  // Find the predictions for selected date
   let datePredictions = null;
 
+  // 1. Try to find the exact date from the URL
   if (selectedDate) {
     datePredictions = accaPredictions.find((p) => p.date === selectedDate);
   }
 
-  // If no date in URL or date not found, use most recent
+  // 2. If no date in URL, find the most recent PAST date
   if (!datePredictions && accaPredictions.length > 0) {
-    datePredictions = accaPredictions[0];
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Reset time to midnight for accurate comparison
+
+    // Sort by date descending, then find the first one that is before today
+    const pastDates = accaPredictions
+      .map((p) => ({ ...p, parsedDate: new Date(p.date) }))
+      .filter((p) => p.parsedDate < today)
+      .sort((a, b) => b.parsedDate - a.parsedDate); // Newest first
+
+    if (pastDates.length > 0) {
+      datePredictions = pastDates[0];
+    }
   }
 
+  // 3. Render if we found valid data
   if (
     datePredictions &&
     datePredictions.matches &&
@@ -137,18 +159,20 @@ function renderPastAcca() {
     });
 
     // Update total odds
-    totalOddsElement.textContent = totalOdds.toFixed(2);
+    if (totalOddsElement) {
+      totalOddsElement.textContent = totalOdds.toFixed(2);
+    }
   } else {
     container.innerHTML = `
       <div class="no-predictions">
-        No predictions available for this date.
+        No past predictions available.
       </div>
     `;
-    totalOddsElement.textContent = "0.00";
+    if (totalOddsElement) {
+      totalOddsElement.textContent = "0.00";
+    }
   }
 }
-
-// REMOVED: addAccaDateSelector function - we're using global date selector instead
 
 // Function to calculate total odds for acca
 function calculateAccaTotalOdds(matches) {
