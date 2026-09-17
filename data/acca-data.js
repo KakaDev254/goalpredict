@@ -1,17 +1,19 @@
 const accaPredictions = [
-   {
+    {
     date: "17 Sep 2026",
     matches: [
-      { match: "Levadia vs Tammeka Tartu", time: "19:00", tip: "Corners: Over 9.5", odd: 1.742, result: "pending" },
-      { match: "Real Betis vs Getafe", time: "20:00", tip: "Corners: Over 7.5", odd: 1.26, result: "pending" },
-      { match: "Malaga vs Villarreal", time: "22:30", tip: "Corners: Over 7.5", odd: 1.22, result: "pending" },
-      { match: "Dynamo Makhachkala vs CSKA Moscow", time: "20:45", tip: "Corners: Over 8.5", odd: 1.508, result: "pending" },
-      { match: "Vasalunds vs Hammarby Talang", time: "20:00", tip: "Corners: Over 8.5", odd: 1.545, result: "pending" },
-      { match: "Zeleznicar Pancevo vs Crvena Zvezda", time: "21:00", tip: "1X2: W2", odd: 1.508, result: "pending" },
-      { match: "Vejle vs Brondby", time: "19:30", tip: "Total: Over 2", odd: 1.24, result: "pending" },
-      { match: "Viktoria Plzen vs Royale Union Saint-Gilloise", time: "22:00", tip: "Total 2: (0.5) Over", odd: 1.22, result: "pending" },
-      { match: "Celtic vs Ferencvarosi", time: "22:00", tip: "1X2: W1", odd: 1.745, result: "pending" },
-      { match: "Juventus vs N.E.C.", time: "22:00", tip: "Total 1: (1.5) Over", odd: 1.25, result: "pending" }
+      { match: "Levadia vs Tammeka Tartu", time: "19:00", tip: "Corners: Over 9.5", odd: 1.742, result: "win" },
+      
+      { match: "Malaga vs Villarreal", time: "22:30", tip: "Corners: Over 7.5", odd: 1.22, result: "win" },
+      { match: "Dynamo Makhachkala vs CSKA Moscow", time: "20:45", tip: "Corners: Over 8.5", odd: 1.508, result: "win" },
+      { match: "Vasalunds vs Hammarby Talang", time: "20:00", tip: "Corners: Over 8.5", odd: 1.545, result: "win" },
+      { match: "Zeleznicar Pancevo vs Crvena Zvezda", time: "21:00", tip: "1X2: W2", odd: 1.508, result: "win" },
+      { match: "Vejle vs Brondby", time: "19:30", tip: "Total: Over 2", odd: 1.24, result: "win" },
+      { match: "Viktoria Plzen vs Royale Union Saint-Gilloise", time: "22:00", tip: "Total 2: (0.5) Over", odd: 1.22, result: "win" },
+      { match: "Juventus vs N.E.C.", time: "22:00", tip: "Total 1: (1.5) Over", odd: 1.25, result: "win" },
+      { match: "Celtic vs Ferencvarosi", time: "22:00", tip: "1X2: W1", odd: 1.745, result: "lose" },
+      { match: "Real Betis vs Getafe", time: "20:00", tip: "Corners: Over 7.5", odd: 1.26, result: "lose" }
+      
     ]
   },
   {
