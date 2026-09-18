@@ -1,5 +1,18 @@
 const accaPredictions = [
     {
+    date: "18 Sep 2026",
+    matches: [
+      { match: "Kasimpasa vs Konyaspor", time: "20:00", tip: "Total: Over 1.5", odd: 1.27, result: "pending" },
+      { match: "Omonia 29th May vs AEK Larnaca", time: "20:00", tip: "1X2: W2", odd: 1.47, result: "pending" },
+      { match: "Manchester City (Women) vs Liverpool (Women)", time: "21:00", tip: "Total 1: (1.5) Over", odd: 1.36, result: "pending" },
+      { match: "Utrecht II vs VVV-Venlo", time: "21:00", tip: "Corners: Over 9.5", odd: 1.55, result: "pending" },
+      { match: "Wolverhampton Wanderers U21 vs Southampton U21", time: "21:00", tip: "Total: Over 2.5", odd: 1.44, result: "pending" },
+      { match: "Gent vs Standard Liege", time: "21:45", tip: "Corners: Over 7.5", odd: 1.36, result: "pending" },
+      { match: "AS Monaco vs RC Lens", time: "21:45", tip: "Corners: Over 7.5", odd: 1.21, result: "pending" },
+      { match: "Brentford vs Chelsea", time: "22:00", tip: "Corners: Over 8.5", odd: 1.37, result: "pending" }
+    ]
+  },
+    {
     date: "17 Sep 2026",
     matches: [
       { match: "Levadia vs Tammeka Tartu", time: "19:00", tip: "Corners: Over 9.5", odd: 1.742, result: "win" },
