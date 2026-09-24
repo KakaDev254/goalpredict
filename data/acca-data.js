@@ -1,4 +1,23 @@
 const accaPredictions = [
+   {
+    date: "25 Sep 2026",
+    matches: [
+      { match: "Turkey vs France", time: "21:45", tip: "1X2: W2", odd: 1.401, result: "pending" },
+      { match: "Poland vs Bosnia and Herzegovina", time: "21:45", tip: "1X2: W1", odd: 1.688, result: "pending" },
+      { match: "Armenia vs Latvia", time: "19:00", tip: "Corners: Total 1 (4.5) Over", odd: 1.44, result: "pending" },
+      { match: "Nigeria vs Madagascar", time: "19:00", tip: "Total 1: (1.5) Over", odd: 1.34, result: "pending" }
+    ]
+  },
+  {
+    date: "24 Sep 2026",
+    matches: [
+      { match: "Norway vs Denmark", time: "21:45", tip: "BTTS: Yes", odd: 1.57, result: "win" },
+      { match: "Austria vs Israel", time: "21:45", tip: "1X2: W1", odd: 1.425, result: "win" },
+      { match: "Portugal vs Wales", time: "21:45", tip: "1X2: W1", odd: 1.225, result: "win" },
+      { match: "Serbia vs Greece", time: "21:45", tip: "Corners: Over 7.5", odd: 1.44, result: "win" },
+      { match: "Cameroon vs Comoro Islands", time: "22:00", tip: "1X2: W1", odd: 1.34, result: "win" }
+    ]
+  },
     {
     date: "18 Sep 2026",
     matches: [
