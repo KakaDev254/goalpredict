@@ -1,14 +1,33 @@
 const accaPredictions = [
+    {
+    date: "29 Sep 2026",
+    matches: [
+      { match: "Burundi vs Algeria", time: "16:00", tip: "1X2: W2", odd: 1.27, result: "pending" },
+      { match: "Ethiopia vs Senegal", time: "16:00", tip: "1X2: W2", odd: 1.36, result: "pending" },
+      { match: "South Sudan vs Egypt", time: "16:00", tip: "Total 2: (1.5) Over", odd: 1.4, result: "pending" },
+      { match: "Spain vs Croatia", time: "21:45", tip: "1X2: W1", odd: 1.21, result: "pending" },
+      { match: "Scotland vs Switzerland", time: "21:45", tip: "Corners: Over 7.5", odd: 1.37, result: "pending" }
+    ]
+  },
    {
+    date: "28 Sep 2026",
+    matches: [
+      { match: "Georgia vs Ukraine", time: "19:00", tip: "Double Chance: 2X", odd: 1.48, result: "win" },
+      { match: "Belgium vs France", time: "21:45", tip: "Double Chance: 2X", odd: 1.284, result: "win" },
+      { match: "Turkey vs Italy", time: "21:45", tip: "Double Chance: 2X", odd: 1.504, result: "win" },
+      { match: "Sweden vs Poland", time: "21:45", tip: "Corners: Over 7.5", odd: 1.34, result: "win" }
+    ]
+  },
+    {
     date: "26 Sep 2026",
     matches: [
-      { match: "Brabrand vs Nykobing", time: "15:00", tip: "Total: Over 2.5", odd: 1.52, result: "pending" },
-      { match: "Slovenia vs Scotland", time: "16:00", tip: "Double Chance: 2X", odd: 1.52, result: "pending" },
-      { match: "Wycombe Wanderers vs Reading", time: "17:00", tip: "Corners: Over 8.5", odd: 1.36, result: "pending" },
-      { match: "Glentoran vs Carrick Rangers", time: "17:00", tip: "Corners: Over 8.5", odd: 1.376, result: "pending" },
-      { match: "Oman vs Saudi Arabia", time: "21:00", tip: "Total: Over 1.5", odd: 1.33, result: "pending" },
-      { match: "England vs Spain", time: "21:45", tip: "Total: Over 2.5", odd: 1.835, result: "pending" },
-      { match: "Slovakia vs Moldova", time: "21:45", tip: "1X2: W1", odd: 1.201, result: "pending" }
+      { match: "Brabrand vs Nykobing", time: "15:00", tip: "Total: Over 2.5", odd: 1.52, result: "lose" },
+      { match: "Slovenia vs Scotland", time: "16:00", tip: "Double Chance: 2X", odd: 1.52, result: "win" },
+      { match: "Wycombe Wanderers vs Reading", time: "17:00", tip: "Corners: Over 8.5", odd: 1.36, result: "win" },
+      { match: "Glentoran vs Carrick Rangers", time: "17:00", tip: "Corners: Over 8.5", odd: 1.376, result: "lose" },
+      { match: "Oman vs Saudi Arabia", time: "21:00", tip: "Total: Over 1.5", odd: 1.33, result: "win" },
+      { match: "England vs Spain", time: "21:45", tip: "Total: Over 2.5", odd: 1.835, result: "win" },
+      { match: "Slovakia vs Moldova", time: "21:45", tip: "1X2: W1", odd: 1.201, result: "win" }
     ]
   },
    {
