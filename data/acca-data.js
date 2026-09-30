@@ -1,12 +1,33 @@
 const accaPredictions = [
     {
+    date: "01 Oct 2026",
+    matches: [
+      { match: "Baerum vs Lillestrom", time: "19:00", tip: "1X2: W2", odd: 1.112, result: "pending" },
+      { match: "Austria Wien (Women) vs Internazionale Milano (Women)", time: "19:45", tip: "1X2: W2", odd: 1.677, result: "pending" },
+      { match: "Germany vs Serbia", time: "21:45", tip: "1X2: W1", odd: 1.251, result: "pending" },
+      { match: "Denmark vs Portugal", time: "21:45", tip: "Corners: Over 7.5", odd: 1.32, result: "pending" },
+      { match: "Greece vs Netherlands", time: "21:45", tip: "Double Chance: 2X", odd: 1.332, result: "pending" }
+    ]
+  },
+   {
+    date: "30 Sep 2026",
+    matches: [
+      { match: "Eritrea vs South Africa", time: "19:00", tip: "1X2: W2", odd: 1.24, result: "win" },
+      { match: "Paris (Women) vs Arsenal L.F.C. (Women)", time: "19:45", tip: "Corners: Over 7.5", odd: 1.226, result: "win" },
+      { match: "United Arab Emirates vs Qatar", time: "20:30", tip: "Total: Over 1.5", odd: 1.311, result: "win" },
+      { match: "West Ham United (Women) vs Southampton (Women)", time: "21:00", tip: "1X2: W1", odd: 1.415, result: "win" },
+      { match: "Benfica (Women) vs Bayern Munich (Women)", time: "22:00", tip: "Total: Over 2.5", odd: 1.51, result: "win" }
+    ]
+  },
+    {
     date: "29 Sep 2026",
     matches: [
-      { match: "Burundi vs Algeria", time: "16:00", tip: "1X2: W2", odd: 1.27, result: "pending" },
-      { match: "Ethiopia vs Senegal", time: "16:00", tip: "1X2: W2", odd: 1.36, result: "pending" },
-      { match: "South Sudan vs Egypt", time: "16:00", tip: "Total 2: (1.5) Over", odd: 1.4, result: "pending" },
-      { match: "Spain vs Croatia", time: "21:45", tip: "1X2: W1", odd: 1.21, result: "pending" },
-      { match: "Scotland vs Switzerland", time: "21:45", tip: "Corners: Over 7.5", odd: 1.37, result: "pending" }
+      
+      { match: "Ethiopia vs Senegal", time: "16:00", tip: "1X2: W2", odd: 1.36, result: "win" },
+      { match: "South Sudan vs Egypt", time: "16:00", tip: "Total 2: (1.5) Over", odd: 1.4, result: "win" },
+      { match: "Spain vs Croatia", time: "21:45", tip: "1X2: W1", odd: 1.21, result: "win" },
+      { match: "Scotland vs Switzerland", time: "21:45", tip: "Corners: Over 7.5", odd: 1.37, result: "win" },
+      { match: "Burundi vs Algeria", time: "16:00", tip: "1X2: W2", odd: 1.27, result: "lose" }
     ]
   },
    {
