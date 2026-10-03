@@ -1,12 +1,23 @@
 const accaPredictions = [
+    {
+    date: "03 Oct 2026",
+    matches: [
+      { match: "Burton Albion vs Huddersfield Town", time: "17:00", tip: "Corners: Over 7.5", odd: 1.3, result: "pending" },
+      { match: "Leyton Orient vs Plymouth Argyle", time: "17:00", tip: "Total: Over 2.5", odd: 1.666, result: "pending" },
+      { match: "Carrick Rangers vs Crusaders", time: "17:00", tip: "Total: Over 2.5", odd: 1.545, result: "pending" },
+      { match: "Croatia vs England", time: "19:00", tip: "Double Chance: 2X", odd: 1.214, result: "pending" },
+      { match: "Roma (Women) vs Lazio (Women)", time: "19:00", tip: "1X2: W1", odd: 1.389, result: "pending" },
+      { match: "Spain vs Czech Republic", time: "21:45", tip: "Total 1: (1.5) Over", odd: 1.13, result: "pending" }
+    ]
+  },
    {
     date: "02 Oct 2026",
     matches: [
-      { match: "Latvia vs Montenegro", time: "19:00", tip: "Corners: Over 7.5", odd: 1.39, result: "pending" },
-      { match: "Naestved vs Nykobing", time: "20:00", tip: "Total: Over 1.5", odd: 1.277, result: "pending" },
-      { match: "Belgium vs Turkey", time: "21:45", tip: "Corners: Total 1 (4.5) Over", odd: 1.39, result: "pending" },
-      { match: "Bosnia and Herzegovina vs Sweden", time: "21:45", tip: "Double Chance: 2X", odd: 1.495, result: "pending" },
-      { match: "Faroe Islands vs Slovakia", time: "21:45", tip: "1X2: W2", odd: 1.649, result: "pending" }
+      { match: "Latvia vs Montenegro", time: "19:00", tip: "Corners: Over 7.5", odd: 1.39, result: "lose" },
+      { match: "Naestved vs Nykobing", time: "20:00", tip: "Total: Over 1.5", odd: 1.277, result: "win" },
+      { match: "Belgium vs Turkey", time: "21:45", tip: "Corners: Total 1 (4.5) Over", odd: 1.39, result: "win" },
+      { match: "Bosnia and Herzegovina vs Sweden", time: "21:45", tip: "Double Chance: 2X", odd: 1.495, result: "win" },
+      { match: "Faroe Islands vs Slovakia", time: "21:45", tip: "1X2: W2", odd: 1.649, result: "lose" }
     ]
   },
     {
