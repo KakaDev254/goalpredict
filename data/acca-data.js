@@ -2,15 +2,15 @@ const accaPredictions = [
     {
     date: "04 Oct 2026",
     matches: [
-      { match: "Bryne vs Lyn Fotball", time: "15:30", tip: "Corners: Over 8.5", odd: 1.297, result: "pending" },
-      { match: "West Ham United (Women) vs Chelsea (Women)", time: "16:00", tip: "Total 2: (1.5) Over", odd: 1.212, result: "pending" },
-      { match: "Tottenham Hotspur (Women) vs London City Lionesses (Women)", time: "16:00", tip: "Total: Over 2.5", odd: 1.742, result: "pending" },
-      { match: "Bangor vs Coleraine", time: "17:00", tip: "1X2: W2", odd: 1.231, result: "pending" },
-      { match: "Manchester City (Women) vs Arsenal L.F.C. (Women)", time: "18:30", tip: "Total: Over 2.5", odd: 1.702, result: "pending" },
-      { match: "Greece vs Germany", time: "21:45", tip: "Double Chance: 2X", odd: 1.248, result: "pending" },
-      { match: "Netherlands vs Serbia", time: "21:45", tip: "1X2: W1", odd: 1.148, result: "pending" },
-      { match: "Portugal vs Norway", time: "21:45", tip: "BTTS: Yes", odd: 1.43, result: "pending" },
-      { match: "Wales vs Denmark", time: "21:45", tip: "Double Chance: 2X", odd: 1.276, result: "pending" }
+      { match: "Bryne vs Lyn Fotball", time: "15:30", tip: "Corners: Over 8.5", odd: 1.297, result: "win" },
+      { match: "West Ham United (Women) vs Chelsea (Women)", time: "16:00", tip: "Total 2: (1.5) Over", odd: 1.212, result: "win" },
+      { match: "Tottenham Hotspur (Women) vs London City Lionesses (Women)", time: "16:00", tip: "Total: Over 2.5", odd: 1.742, result: "win" },
+      { match: "Bangor vs Coleraine", time: "17:00", tip: "1X2: W2", odd: 1.231, result: "win" },
+      { match: "Manchester City (Women) vs Arsenal L.F.C. (Women)", time: "18:30", tip: "Total: Over 2.5", odd: 1.702, result: "win" },
+      { match: "Greece vs Germany", time: "21:45", tip: "Double Chance: 2X", odd: 1.248, result: "win" },
+      { match: "Netherlands vs Serbia", time: "21:45", tip: "1X2: W1", odd: 1.148, result: "win" },
+      { match: "Portugal vs Norway", time: "21:45", tip: "BTTS: Yes", odd: 1.43, result: "win" },
+      { match: "Wales vs Denmark", time: "21:45", tip: "Double Chance: 2X", odd: 1.276, result: "win" }
     ]
   },
     {
