@@ -1,13 +1,27 @@
 const accaPredictions = [
     {
+    date: "04 Oct 2026",
+    matches: [
+      { match: "Bryne vs Lyn Fotball", time: "15:30", tip: "Corners: Over 8.5", odd: 1.297, result: "pending" },
+      { match: "West Ham United (Women) vs Chelsea (Women)", time: "16:00", tip: "Total 2: (1.5) Over", odd: 1.212, result: "pending" },
+      { match: "Tottenham Hotspur (Women) vs London City Lionesses (Women)", time: "16:00", tip: "Total: Over 2.5", odd: 1.742, result: "pending" },
+      { match: "Bangor vs Coleraine", time: "17:00", tip: "1X2: W2", odd: 1.231, result: "pending" },
+      { match: "Manchester City (Women) vs Arsenal L.F.C. (Women)", time: "18:30", tip: "Total: Over 2.5", odd: 1.702, result: "pending" },
+      { match: "Greece vs Germany", time: "21:45", tip: "Double Chance: 2X", odd: 1.248, result: "pending" },
+      { match: "Netherlands vs Serbia", time: "21:45", tip: "1X2: W1", odd: 1.148, result: "pending" },
+      { match: "Portugal vs Norway", time: "21:45", tip: "BTTS: Yes", odd: 1.43, result: "pending" },
+      { match: "Wales vs Denmark", time: "21:45", tip: "Double Chance: 2X", odd: 1.276, result: "pending" }
+    ]
+  },
+    {
     date: "03 Oct 2026",
     matches: [
-      { match: "Burton Albion vs Huddersfield Town", time: "17:00", tip: "Corners: Over 7.5", odd: 1.3, result: "pending" },
-      { match: "Leyton Orient vs Plymouth Argyle", time: "17:00", tip: "Total: Over 2.5", odd: 1.666, result: "pending" },
-      { match: "Carrick Rangers vs Crusaders", time: "17:00", tip: "Total: Over 2.5", odd: 1.545, result: "pending" },
-      { match: "Croatia vs England", time: "19:00", tip: "Double Chance: 2X", odd: 1.214, result: "pending" },
-      { match: "Roma (Women) vs Lazio (Women)", time: "19:00", tip: "1X2: W1", odd: 1.389, result: "pending" },
-      { match: "Spain vs Czech Republic", time: "21:45", tip: "Total 1: (1.5) Over", odd: 1.13, result: "pending" }
+      { match: "Burton Albion vs Huddersfield Town", time: "17:00", tip: "Corners: Over 7.5", odd: 1.3, result: "win" },
+      { match: "Carrick Rangers vs Crusaders", time: "17:00", tip: "Total: Over 2.5", odd: 1.545, result: "win" },
+      { match: "Croatia vs England", time: "19:00", tip: "Double Chance: 2X", odd: 1.214, result: "win" },
+      { match: "Roma (Women) vs Lazio (Women)", time: "19:00", tip: "1X2: W1", odd: 1.389, result: "win" },
+      { match: "Spain vs Czech Republic", time: "21:45", tip: "Total 1: (1.5) Over", odd: 1.13, result: "win" },
+      { match: "Leyton Orient vs Plymouth Argyle", time: "17:00", tip: "Total: Over 2.5", odd: 1.666, result: "lose" },
     ]
   },
    {
