@@ -1,13 +1,23 @@
 const accaPredictions = [
+   {
+    date: "06 Oct 2026",
+    matches: [
+      { match: "Norway U21 vs Israel U21", time: "19:45", tip: "Total: Over 2.5", odd: 1.666, result: "pending" },
+      { match: "Lithuania U21 vs Croatia U21", time: "20:00", tip: "1X2: W2", odd: 1.206, result: "pending" },
+      { match: "Croatia vs Spain", time: "21:45", tip: "1X2: W2", odd: 1.308, result: "pending" },
+      { match: "Scotland vs Slovenia", time: "21:45", tip: "Double Chance: 1X", odd: 1.195, result: "pending" },
+      { match: "Stanway Rovers vs Enfield Town", time: "21:45", tip: "1X2: W2", odd: 1.63, result: "pending" }
+    ]
+  },
   {
     date: "05 Oct 2026",
     matches: [
-      { match: "Indonesia vs Thailand", time: "16:00", tip: "Total: Over 1.5", odd: 1.288, result: "pending" },
-      { match: "Cyprus vs Latvia", time: "19:00", tip: "Corners: Over 7.5", odd: 1.34, result: "pending" },
-      { match: "Italy U21 vs Poland U21", time: "19:15", tip: "Total: Over 2.5", odd: 1.72, result: "pending" },
-      { match: "Bosnia and Herzegovina vs Poland", time: "21:45", tip: "Double Chance: 2X", odd: 1.406, result: "pending" },
-      { match: "Italy vs Turkey", time: "21:45", tip: "Corners: Over 7.5", odd: 1.25, result: "pending" },
-      { match: "France vs Belgium", time: "21:45", tip: "1X2: W1", odd: 1.49, result: "pending" }
+      { match: "Indonesia vs Thailand", time: "16:00", tip: "Total: Over 1.5", odd: 1.288, result: "win" },
+      { match: "Cyprus vs Latvia", time: "19:00", tip: "Corners: Over 7.5", odd: 1.34, result: "win" },
+      { match: "Italy U21 vs Poland U21", time: "19:15", tip: "Total: Over 2.5", odd: 1.72, result: "win" },
+      { match: "Bosnia and Herzegovina vs Poland", time: "21:45", tip: "Double Chance: 2X", odd: 1.406, result: "lose" },
+      { match: "Italy vs Turkey", time: "21:45", tip: "Corners: Over 7.5", odd: 1.25, result: "win" },
+      { match: "France vs Belgium", time: "21:45", tip: "1X2: W1", odd: 1.49, result: "win" }
     ]
   },
     {
