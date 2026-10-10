@@ -1,5 +1,18 @@
 const accaPredictions = [
    {
+    date: "10 Oct 2026",
+    matches: [
+      { match: "Viktoria Plzen vs Mlada Boleslav", time: "16:00", tip: "BTTS: Yes", odd: 1.52, result: "pending" },
+      { match: "1. FSV Mainz 05 vs Bayer 04 Leverkusen", time: "16:30", tip: "Total: Over 2.5", odd: 1.44, result: "pending" },
+      { match: "Caykur Rizespor vs Fenerbahce", time: "19:00", tip: "Total 2: (1.5) Over", odd: 1.53, result: "pending" },
+      { match: "RAAL La Louviere vs Club Brugge", time: "19:15", tip: "1X2: W2", odd: 1.366, result: "pending" },
+      { match: "Feyenoord vs AZ Alkmaar", time: "19:45", tip: "Total: Over 2.5", odd: 1.35, result: "pending" },
+      { match: "AS Monaco vs Toulouse", time: "21:45", tip: "Total 1: (1.5) Over", odd: 1.571, result: "pending" },
+      { match: "Ajax vs N.E.C.", time: "22:00", tip: "Corners: Over 8.5", odd: 1.5, result: "pending" },
+      { match: "Real Madrid vs Villarreal", time: "22:00", tip: "1X2: W1", odd: 1.403, result: "pending" }
+    ]
+  },
+   {
     date: "06 Oct 2026",
     matches: [
       { match: "Norway U21 vs Israel U21", time: "19:45", tip: "Total: Over 2.5", odd: 1.666, result: "pending" },
@@ -15,9 +28,10 @@ const accaPredictions = [
       { match: "Indonesia vs Thailand", time: "16:00", tip: "Total: Over 1.5", odd: 1.288, result: "win" },
       { match: "Cyprus vs Latvia", time: "19:00", tip: "Corners: Over 7.5", odd: 1.34, result: "win" },
       { match: "Italy U21 vs Poland U21", time: "19:15", tip: "Total: Over 2.5", odd: 1.72, result: "win" },
-      { match: "Bosnia and Herzegovina vs Poland", time: "21:45", tip: "Double Chance: 2X", odd: 1.406, result: "lose" },
+      
       { match: "Italy vs Turkey", time: "21:45", tip: "Corners: Over 7.5", odd: 1.25, result: "win" },
-      { match: "France vs Belgium", time: "21:45", tip: "1X2: W1", odd: 1.49, result: "win" }
+      { match: "France vs Belgium", time: "21:45", tip: "1X2: W1", odd: 1.49, result: "win" },
+      { match: "Bosnia and Herzegovina vs Poland", time: "21:45", tip: "Double Chance: 2X", odd: 1.406, result: "lose" },
     ]
   },
     {
