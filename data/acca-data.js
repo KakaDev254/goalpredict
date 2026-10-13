@@ -1,5 +1,17 @@
 const accaPredictions = [
    {
+    date: "13 Oct 2026",
+    matches: [
+      { match: "RC Lens vs Sporting Clube de Portugal", time: "19:45", tip: "BTTS: Yes", odd: 1.47, result: "pending" },
+      { match: "Sabah Baku vs Slavia Prague", time: "19:45", tip: "Total 2: (1.5) Over", odd: 1.66, result: "pending" },
+      { match: "Arsenal vs Lille OSC", time: "22:00", tip: "1X2: W1", odd: 1.231, result: "pending" },
+      { match: "Atletico Madrid vs Manchester United", time: "22:00", tip: "1X2: W1", odd: 1.98, result: "pending" },
+      { match: "Viking vs Bayern Munich", time: "22:00", tip: "Total 2: (2.5) Over", odd: 1.34, result: "pending" },
+      { match: "Internazionale Milano vs Club Brugge", time: "22:00", tip: "Total 1: (1.5) Over", odd: 1.24, result: "pending" },
+      { match: "Stoke City vs Middlesbrough", time: "22:00", tip: "Corners: Over 8.5", odd: 1.299, result: "pending" }
+    ]
+  },
+   {
     date: "10 Oct 2026",
     matches: [
       { match: "Viktoria Plzen vs Mlada Boleslav", time: "16:00", tip: "BTTS: Yes", odd: 1.52, result: "pending" },
