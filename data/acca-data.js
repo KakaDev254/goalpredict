@@ -1,5 +1,15 @@
 const accaPredictions = [
-   {
+    {
+    date: "13 Nov 2026",
+    matches: [
+      { match: "Moldova vs Kazakhstan", time: "20:00", tip: "Corners: Over 7.5", odd: 1.36, result: "pending" },
+      { match: "Serbia vs Germany", time: "22:45", tip: "1X2: W2", odd: 1.286, result: "pending" },
+      { match: "Scotland vs Republic of North Macedonia", time: "22:45", tip: "1X2: W1", odd: 1.197, result: "pending" },
+      { match: "Netherlands vs Greece", time: "22:45", tip: "Corners: Total 1 (4.5) Over", odd: 1.32, result: "pending" },
+      { match: "Slovakia vs Faroe Islands", time: "22:45", tip: "1X2: W1", odd: 1.387, result: "pending" }
+    ]
+  },
+  {
     date: "12 Nov 2026",
     matches: [
       { match: "Turkey vs Belgium", time: "20:00", tip: "Double Chance: 2X", odd: 1.299, result: "win" },
